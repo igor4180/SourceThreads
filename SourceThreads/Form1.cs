@@ -3,6 +3,7 @@ namespace SourceThreads
 	public partial class Form1 : Form
 	{
 		Thread[] threads = new Thread[3];
+		
 
 		char[] allchars = new char[] { 'a','b','c','d','e','f','g','h','i','j','k',
 			'l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
@@ -94,8 +95,8 @@ namespace SourceThreads
 		{
 			while (true)
 			{
-				richTextBox1.Text += allchars[random.Next(0, 2  
-					5)];
+				richTextBox1.Text += allchars[random.Next(0, 25)];
+					
 				counter++;
 				Thread.Sleep(50);
 				if (counter > 1000)
