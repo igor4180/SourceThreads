@@ -107,5 +107,32 @@ namespace SourceThreads
 
 		}
 
+		private void button4_Click(object sender, EventArgs e)
+		{
+			if (listBox1.Items.Count > 0)
+			{
+				foreach (object obj in listBox1.Items)
+				{
+					foreach (Thread thread in threads)
+					{
+						if ((string)obj == thread.Name)
+						{
+							thread.Start();
+
+						}
+					}
+				}
+			}
+		}
+	}
+	class MyAsyncResult : IAsyncResult
+	{
+		public object? AsyncState => throw new NotImplementedException();
+
+		public WaitHandle AsyncWaitHandle => throw new NotImplementedException();
+
+		public bool CompletedSynchronously => throw new NotImplementedException();
+
+		public bool IsCompleted => throw new NotImplementedException();
 	}
 }
